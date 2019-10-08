@@ -1,96 +1,122 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { Component } from 'react';
+import { Text,StyleSheet, TextInput,View ,TouchableOpacity,CheckBox} from 'react-native';
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+export default class HelloWorldApp extends Component {
+         
+  render() {
+    return (
 
-const App:() => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Hello world!</Text>
-             
-            </View>
-          
-          
-      
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+      <View style={styles.container}>
+      <Text style={styles.loginFront}>Login</Text>
+      <Text style={styles.first}>Don't have an account? <Text style={styles.span}>Create an account</Text></Text>
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.inputs}
+              placeholder="Uner Name"/>
+        </View>
+        
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.inputs}
+              placeholder="Password"/>
+        </View>
+        <View style={{}}>
+                <CheckBox selected=""/>               
+            </View><Text style={styles.check}>  Remember Me       <Text>Forgot Password?</Text></Text>
+         <TouchableOpacity style={styles.buttonContainer}>
+             <Text  style={styles.buttonText}>LOGIN</Text>
+        </TouchableOpacity>
+       <Text style={styles.anotherOption}>Or Login with</Text>
+       <TouchableOpacity style={styles.buttonContainer}>
+       <Text style={styles.f}>f</Text>
+       </TouchableOpacity>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
-export default App;
+  container: {
+  //  flex: 1,
+  marginTop:20,
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    marginLeft:60,
+  },
+  inputContainer: {
+    borderBottomWidth: 1,
+      width:250,
+      height:45,
+      marginBottom:20,
+      flexDirection: 'row',
+      alignItems:'center'
+  },
+  f:{
+    backgroundColor:'#216BDB',
+       color:"#FFFFFF",
+       textAlign: 'center',
+       fontSize:20,
+       padding:5,
+       borderRadius: 50,
+      paddingRight:20,
+      paddingLeft:20,
+      marginLeft:5,
+      fontWeight:'700'
+  },
+ buttonText:{
+        color: '#fff',
+        textAlign: 'center',
+        fontWeight: '500',
+        backgroundColor:'#216BDB',
+        padding:15,
+        fontSize:17,
+        paddingLeft:60,
+        paddingRight:60,
+        borderRadius: 40,
+    },
+    check:{
+      marginTop:-25,
+      marginLeft:25,
+      paddingBottom:20
+    },
+  loginFront:{
+  fontWeight: '700',
+  fontSize:30,
+  marginTop:40,
+  color:"#508FC7"
+  },
+  anotherOption:{
+  // textAlign: 'center',
+   fontSize:12,
+   marginLeft:90,
+   color:"#46474D"
+  },
+  first:{ 
+   marginBottom:30
+},
+  span:{
+  color:"#F24455",
+  },
+  inputs:{
+      height:45,
+      marginLeft:16,
+      borderBottomColor: '#FFFFFF',
+      flex:1,
+  },
+  buttonContainer: {
+    height:45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:20,
+    width:250,
+    borderRadius:30,
+  },
+  loginButton: {
+    backgroundColor: "#00b5ec",
+    padding:5
+  },
+  loginText: {
+    color: 'white',
+  }
+});
