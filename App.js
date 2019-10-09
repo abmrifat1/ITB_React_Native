@@ -5,19 +5,22 @@ import { Text,StyleSheet, TextInput,View ,TouchableOpacity,CheckBox} from 'react
 export default class HelloWorldApp extends Component {
          
   render() {
+    var test="hi tanvir";
     return (
 
+      
       <View style={styles.container}>
+        <Text>{test}</Text>
       <Text style={styles.loginFront}>Login</Text>
       <Text style={styles.first}>Don't have an account? <Text style={styles.span}>Create an account</Text></Text>
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}
-              placeholder="Uner Name"/>
+              placeholder="User Name"/>
         </View>
         
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}
-              placeholder="Password"/>
+              placeholder="Password" secureTextEntry={true}/>
         </View>
         <View style={{}}>
                 <CheckBox selected=""/>               
@@ -40,7 +43,7 @@ const styles = StyleSheet.create({
   //  flex: 1,
   marginTop:20,
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
+   // backgroundColor: '#FFFFFF',
     marginLeft:60,
   },
   inputContainer: {
